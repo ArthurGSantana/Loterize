@@ -1,0 +1,18 @@
+@import "../../../../scss/variables";
+
+:host {
+  height: var(--width, 16px);
+  width: var(--height, 16px);
+  color: var(--color, #000000);
+  display: inline-block;
+
+  --icon-size: 100%;
+  --icon-repeat: no-repeat;
+  --icon-position: center;
+
+  mask-image: var(--svg-icon-url, initial);
+  mask-size: var(--icon-size);
+  mask-repeat: var(--icon-repeat);
+  mask-position: var(--icon-position);
+  background-color: currentColor;
+}

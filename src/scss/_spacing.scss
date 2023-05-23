@@ -1,0 +1,11 @@
+@for $i from 1 through 100 {
+  .row-gap-#{$i} {
+    row-gap: #{$i}px;
+  }
+}
+
+@for $i from 1 through 100 {
+  .col-gap-#{$i} {
+    column-gap: #{$i}px;
+  }
+}
