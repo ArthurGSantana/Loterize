@@ -1,0 +1,23 @@
+@for $i from 1 through 100 {
+  .vw-#{$i} {
+    width: #{$i + "%"};
+  }
+}
+
+@for $i from 1 through 100 {
+  .vh-#{$i} {
+    height: #{$i + "%"};
+  }
+}
+
+@for $i from 1 through 1000 {
+  .w-#{$i} {
+    width: #{$i}px;
+  }
+}
+
+@for $i from 1 through 1000 {
+  .h-#{$i} {
+    height: #{$i}px;
+  }
+}
