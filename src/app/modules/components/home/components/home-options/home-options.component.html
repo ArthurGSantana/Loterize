@@ -1,0 +1,9 @@
+<div class="wh-100 flex justify-center align-center mt-100">
+  <ng-container *ngFor="let card of cardOptions">
+    <loto-card-option
+      [textTitle]="card.textTitle"
+      [textDescription]="card.textDescription"
+      [textButton]="card.textButton"
+    ></loto-card-option>
+  </ng-container>
+</div>
