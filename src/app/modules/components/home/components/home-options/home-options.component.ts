@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { ICardOption } from "src/app/core/models/CardOption.interface";
 
+import { ICardOption } from "src/app/core/models/CardOption.interface";
 import { CardOptions } from "src/app/core/utils/data";
 
 @Component({
