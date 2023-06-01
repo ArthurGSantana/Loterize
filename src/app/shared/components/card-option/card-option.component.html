@@ -1,13 +1,13 @@
 <div
-  class="w-250 h-300 rounded-md bg-secondary border-dashed border-2 border-green-200 card"
+  class="w-250 h-300 rounded-md bg-secondary border-dashed border-2 border-green-200 card flex direction-column"
 >
   <div
     class="vw-100 h-40 bg-items rounded-md-top flex justify-center align-center"
   >
     <span class="font-bold text-white"
-      >MEGA-SENA <small class="text-sm">(6 dez)</small></span
+      >{{card.textTitle}} <small class="text-sm">({{card.textNumber}} dez)</small></span
     >
   </div>
-  <div></div>
-  <div><button type="button" class="btn">Simule!</button></div>
+  <div class="vw-100 flex-1"></div>
+  <div class="flex justify-center p-10"><button type="button" class="btn bg-items border-green-200 text-white h-36 w-100">Simule!</button></div>
 </div>

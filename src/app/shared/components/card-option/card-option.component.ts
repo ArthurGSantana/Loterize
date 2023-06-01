@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+import { ICardOption } from "src/app/core/models/CardOption.interface";
 
 @Component({
   standalone: true,
@@ -7,7 +8,5 @@ import { Component, Input } from "@angular/core";
   styleUrls: ["./card-option.component.scss"]
 })
 export class CardOptionComponent {
-  @Input({ required: true }) textTitle!: string;
-  @Input({ required: true }) textDescription!: string;
-  @Input({ required: true }) textButton!: string;
+  @Input({ required: true }) card!: ICardOption;
 }
