@@ -1,4 +1,5 @@
 import { Component, Input } from "@angular/core";
+
 import { ICardOption } from "src/app/core/models/CardOption.interface";
 
 @Component({
