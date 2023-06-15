@@ -1,10 +1,10 @@
 import { Component, HostBinding, Input } from "@angular/core";
 
 @Component({
+  standalone: true,
   selector: "loto-svg-icon",
   templateUrl: "./svg-icon.component.html",
   styleUrls: ["./svg-icon.component.scss"],
-  standalone: true
 })
 export class SvgIconComponent {
   colors: { [key: string]: string } = {

@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
-import { Observable, map } from "rxjs";
+import { map } from "rxjs";
 
 import { ICardConfig } from "src/app/core/models/CardOption.interface";
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
