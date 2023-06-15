@@ -1,6 +1,4 @@
-export interface ICardOption {
-  textTitle: string;
+export interface ICardConfig {
   textDescription: string;
   textButton: string;
-  textNumber: string;
 }

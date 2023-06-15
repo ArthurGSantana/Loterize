@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: "",
     component: HomeComponent,
-    resolve: { games: LotteryResolver }
+    resolve: { contests: LotteryResolver }
   }
 ];
 

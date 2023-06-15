@@ -5,26 +5,28 @@
     class="vw-100 h-40 bg-items rounded-md-top flex justify-center align-center"
   >
     <span class="font-bold text-white"
-      >{{ card.textTitle }}
-      <small class="text-sm">({{ card.textNumber }} dez)</small></span
+      >{{ contest.nome }}
+      <small class="text-sm">({{ contest.dezenas.length }} dez)</small></span
     >
   </div>
   <div class="vw-100 flex direction-column flex-1">
     <div class="p-10 flex justify-center">
-      <span class="font-bold text-black">{{ card.textDescription }}</span>
+      <span class="font-bold text-black">{{ cardConfig.textDescription }}</span>
     </div>
 
     <div class="flex direction-column flex-1 justify-space-evenly pl-20">
       <span class="text-sm font-bold text-black"
-        >Concurso: <span class="font-normal">{{ "54" }}</span></span
+        >Concurso: <span class="font-normal">{{ contest.concurso }}</span></span
       >
       <span class="text-sm font-bold text-black"
         >Sorteio:
-        <span class="font-normal">{{ "03/06/2023 20h00" }}</span></span
+        <span class="font-normal">{{ contest.dataProxConcurso }}</span></span
       >
       <span class="text-sm font-bold text-black"
         >Estimativa:
-        <span class="font-normal">{{ "R$ 48.000.000,00" }}</span></span
+        <span class="font-normal">{{
+          contest.acumuladaProxConcurso
+        }}</span></span
       >
     </div>
   </div>
@@ -33,7 +35,7 @@
       type="button"
       class="btn bg-items border-green-200 text-white h-36 w-100"
     >
-      {{ card.textButton }}
+      {{ cardConfig.textButton }}
     </button>
   </div>
 </div>

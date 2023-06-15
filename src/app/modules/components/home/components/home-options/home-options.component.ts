@@ -2,9 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Observable, map } from "rxjs";
 
-import { ICardOption } from "src/app/core/models/CardOption.interface";
+import { ICardConfig } from "src/app/core/models/CardOption.interface";
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
-import { CardOptions } from "src/app/core/utils/data";
+import { CardConfig } from "src/app/core/utils/data";
 
 @Component({
   selector: "loto-home-options",
@@ -12,15 +12,15 @@ import { CardOptions } from "src/app/core/utils/data";
   styleUrls: ["./home-options.component.scss"]
 })
 export class HomeOptionsComponent implements OnInit {
-  cardOptions: ICardOption[] = CardOptions;
-  games: ILotteryContest[] = [];
+  cardConfig: ICardConfig = CardConfig;
+  contests: ILotteryContest[] = [];
 
   constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.pipe(map(({ games }) => games)).subscribe({
-      next: (response) => {
-        this.games = [...response];
+    this.activatedRoute.data.pipe(map(({ contests }) => contests)).subscribe({
+      next: (response: ILotteryContest[]) => {
+        this.contests = [...response];
       }
     });
   }

@@ -1,7 +1,8 @@
 <div class="vw-100 flex justify-center align-center mt-100 col-gap-50">
-  <ng-container *ngFor="let card of cardOptions">
+  <ng-container *ngFor="let item of contests">
     <loto-card-option
-      [card]="card"
+      [cardConfig]="cardConfig"
+      [contest]="item"
     ></loto-card-option>
   </ng-container>
 </div>

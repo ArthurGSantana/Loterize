@@ -1,6 +1,7 @@
 import { Component, Input } from "@angular/core";
 
-import { ICardOption } from "src/app/core/models/CardOption.interface";
+import { ICardConfig } from "src/app/core/models/CardOption.interface";
+import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 
 @Component({
   standalone: true,
@@ -9,5 +10,6 @@ import { ICardOption } from "src/app/core/models/CardOption.interface";
   styleUrls: ["./card-option.component.scss"]
 })
 export class CardOptionComponent {
-  @Input({ required: true }) card!: ICardOption;
+  @Input({ required: true }) cardConfig!: ICardConfig;
+  @Input({ required: true }) contest!: ILotteryContest;
 }
