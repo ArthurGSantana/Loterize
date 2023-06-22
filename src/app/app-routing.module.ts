@@ -11,7 +11,7 @@ const routes: Routes = [
     loadChildren: () => HomeModule
   },
   {
-    path: "contest",
+    path: "contest/:contestType",
     pathMatch: "full",
     loadChildren: () => ContestModule
   }

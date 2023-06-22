@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { map } from "rxjs";
 
 import { ICardConfig } from "src/app/core/models/CardOption.interface";
@@ -15,7 +15,7 @@ export class HomeOptionsComponent implements OnInit {
   cardConfig: ICardConfig = CardConfig;
   contests: ILotteryContest[] = [];
 
-  constructor(private activatedRoute: ActivatedRoute) {}
+  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
     this.activatedRoute.data.pipe(map(({ contests }) => contests)).subscribe({
@@ -23,5 +23,9 @@ export class HomeOptionsComponent implements OnInit {
         this.contests = [...response];
       }
     });
+  }
+
+  openSelectedContest(contest: ILotteryContest): void {
+    this.router.navigate(['contest', contest.loteria])
   }
 }

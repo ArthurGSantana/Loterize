@@ -1,4 +1,4 @@
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 
 import { ICardConfig } from "src/app/core/models/CardOption.interface";
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
@@ -12,4 +12,6 @@ import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 export class CardOptionComponent {
   @Input({ required: true }) cardConfig!: ICardConfig;
   @Input({ required: true }) contest!: ILotteryContest;
+
+  @Output() onSubmit = new EventEmitter();
 }
