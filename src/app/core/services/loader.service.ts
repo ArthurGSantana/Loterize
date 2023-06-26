@@ -1,22 +1,22 @@
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, Observable } from "rxjs";
+import { BehaviorSubject, Observable, map } from "rxjs";
 
 @Injectable({
   providedIn: "root"
 })
 export class LoaderService {
-  private overlaySubject = new BehaviorSubject<boolean>(false);
-  constructor() {}
+  private loaderState = new BehaviorSubject<number>(0);
 
   showLoader(): void {
-    this.overlaySubject.next(true);
+    this.loaderState.next(this.loaderState.value + 1);
   }
 
-  closeLoader(): void {
-    this.overlaySubject.next(false);
+  hideLoader(): void {
+    const currentValue = this.loaderState.value - 1;
+    this.loaderState.next(currentValue >= 0 ? currentValue : 0);
   }
 
-  getLoaderStatus(): Observable<boolean> {
-    return this.overlaySubject.asObservable();
+  getLoaderState(): Observable<boolean> {
+    return this.loaderState.pipe(map((count) => count > 0));
   }
 }
