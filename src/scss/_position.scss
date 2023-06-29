@@ -1,0 +1,39 @@
+.relative {
+  position: relative;
+}
+
+.sticky {
+  position: sticky;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+@for $i from 0 through 100 {
+  .left-#{$i} {
+    left: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .right-#{$i} {
+    right: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .top-#{$i} {
+    top: #{$i}px;
+  }
+}
+
+@for $i from 0 through 100 {
+  .bottom-#{$i} {
+    bottom: #{$i}px;
+  }
+}
