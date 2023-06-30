@@ -1,0 +1,10 @@
+@import "../../../../scss/variables";
+
+.sidebar {
+  height: calc(100vh - 140px);
+  width: 180px;
+
+  li:hover {
+    background-color: $fern-green;
+  }
+}
