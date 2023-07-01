@@ -1,8 +1,63 @@
-<div class="fixed bg-header sidebar flex align-start">
+<div
+  [@openClose]="controlSidebar"
+  class="fixed bg-header sidebar flex align-center justify-space-between direction-column"
+>
   <ul class="flex direction-column vh-50 vw-100 justify-space-around">
-    <li class="flex text text-xl font-bold text-timberwolf pointer"><span class="p-15">Mega-Sena</span></li>
-    <li class="flex text text-xl font-bold text-timberwolf pointer"><span class="p-15">Quina</span></li>
-    <li class="flex text text-xl font-bold text-timberwolf pointer"><span class="p-15">Lotofácil</span></li>
-    <li class="flex text text-xl font-bold text-timberwolf pointer"><span class="p-15">Saiba Mais</span></li>
+    <li
+      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/play.svg"
+        width="15px"
+        height="15px"
+        color="timberwolf"
+      ></loto-svg-icon>
+      <span class="p-15">Mega-Sena</span>
+    </li>
+    <li
+      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/play.svg"
+        width="15px"
+        height="15px"
+        color="timberwolf"
+      ></loto-svg-icon>
+      <span class="p-15">Quina</span>
+    </li>
+    <li
+      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/play.svg"
+        width="15px"
+        height="15px"
+        color="timberwolf"
+      ></loto-svg-icon>
+      <span class="p-15">Lotofácil</span>
+    </li>
+    <li
+      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/info.svg"
+        width="18px"
+        height="18px"
+        color="timberwolf"
+      ></loto-svg-icon>
+      <span class="p-15">Saiba Mais</span>
+    </li>
   </ul>
+
+  <div
+    class="vw-100 flex justify-center align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+  >
+    <loto-svg-icon
+      src="../../../../assets/svg/back-circle.svg"
+      width="18px"
+      height="18px"
+      color="timberwolf"
+    ></loto-svg-icon>
+    <span class="p-15">Voltar</span>
+  </div>
 </div>

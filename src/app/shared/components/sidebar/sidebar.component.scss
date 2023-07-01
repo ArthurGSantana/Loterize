@@ -4,7 +4,7 @@
   height: calc(100vh - 140px);
   width: 180px;
 
-  li:hover {
+  li:hover, div:hover {
     background-color: $fern-green;
   }
 }

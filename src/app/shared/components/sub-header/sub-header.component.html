@@ -1,13 +1,16 @@
 <div
   class="wh-100 h-70 bg-header flex justify-center align-center col-gap-15 navbar"
 >
-  <div class="absolute left-0 px-20 pointer">
+  <button
+    class="btn-icon absolute left-0 ml-20 pointer bg-transparent"
+    (click)="onChange.emit()"
+  >
     <loto-svg-icon
       src="../../../../assets/svg/menu.svg"
       width="30px"
       height="30px"
       color="timberwolf"
     ></loto-svg-icon>
-  </div>
+  </button>
   <span class="text-2xl font-bold text-timberwolf">Mega-Sena</span>
 </div>
