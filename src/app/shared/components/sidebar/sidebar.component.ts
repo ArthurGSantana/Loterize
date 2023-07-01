@@ -1,5 +1,5 @@
 import { CommonModule } from "@angular/common";
-import { Component, Input } from "@angular/core";
+import { Component, EventEmitter, Input, Output } from "@angular/core";
 import {
   animate,
   state,
@@ -37,4 +37,6 @@ import { SvgIconComponent } from "../svg-icon/svg-icon.component";
 })
 export class SidebarComponent {
   @Input() controlSidebar: "open" | "closed" = "open";
+
+  @Output() onBack = new EventEmitter();
 }
