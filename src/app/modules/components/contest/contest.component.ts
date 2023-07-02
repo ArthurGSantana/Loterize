@@ -2,6 +2,9 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { take } from "rxjs";
 
+import { ContestsToRoute } from "src/app/core/models/LotteryContest.interface";
+import { SidebarOptionsContest } from "src/app/core/utils/data";
+
 @Component({
   selector: "loto-contest",
   templateUrl: "./contest.component.html",
@@ -9,6 +12,13 @@ import { take } from "rxjs";
 })
 export class ContestComponent implements OnInit {
   controlSidebar: "open" | "closed" = "open";
+  sidebarOptionsContest = SidebarOptionsContest;
+
+  contestsToRoute: { [key: string]: string } = {
+    [ContestsToRoute.Mega]: "contest/mega-sena",
+    [ContestsToRoute.Quina]: "contest/quina",
+    [ContestsToRoute.Lotofacil]: "contest/lotofacil"
+  };
 
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -22,6 +32,10 @@ export class ContestComponent implements OnInit {
 
   handleSidebar(): void {
     this.controlSidebar = this.controlSidebar === "open" ? "closed" : "open";
+  }
+
+  routeToContest(contestId: number): void {
+    this.router.navigate([`${this.contestsToRoute[contestId]}`]);
   }
 
   backToHomePage(): void {

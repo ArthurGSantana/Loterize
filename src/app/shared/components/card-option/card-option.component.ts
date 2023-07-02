@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 
-import { ICardConfig } from "src/app/core/models/CardOption.interface";
+import { ICardConfig } from "src/app/core/models/CardConfig.interface";
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 
 @Component({

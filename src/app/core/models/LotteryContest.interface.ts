@@ -16,3 +16,9 @@ export interface ILotteryContest {
   acumuladaProxConcurso: string;
   dataProxConcurso: string;
 }
+
+export enum ContestsToRoute {
+  Mega = 0,
+  Quina,
+  Lotofacil
+}

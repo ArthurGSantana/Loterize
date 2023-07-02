@@ -3,39 +3,20 @@
   class="fixed bg-header sidebar flex align-center justify-space-between direction-column"
 >
   <ul class="flex direction-column vh-50 vw-100 justify-space-around">
-    <li
-      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
-    >
-      <loto-svg-icon
-        src="../../../../assets/svg/play.svg"
-        width="15px"
-        height="15px"
-        color="timberwolf"
-      ></loto-svg-icon>
-      <span class="p-15">Mega-Sena</span>
-    </li>
-    <li
-      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
-    >
-      <loto-svg-icon
-        src="../../../../assets/svg/play.svg"
-        width="15px"
-        height="15px"
-        color="timberwolf"
-      ></loto-svg-icon>
-      <span class="p-15">Quina</span>
-    </li>
-    <li
-      class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
-    >
-      <loto-svg-icon
-        src="../../../../assets/svg/play.svg"
-        width="15px"
-        height="15px"
-        color="timberwolf"
-      ></loto-svg-icon>
-      <span class="p-15">Lotofácil</span>
-    </li>
+    <ng-container *ngFor="let item of sidebarOptions">
+      <li
+        class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
+        (click)="onChange.emit(item.id)"
+      >
+        <loto-svg-icon
+          src="../../../../assets/svg/play.svg"
+          width="15px"
+          height="15px"
+          color="timberwolf"
+        ></loto-svg-icon>
+        <span class="p-15">{{ item.description }}</span>
+      </li>
+    </ng-container>
     <li
       class="flex align-center pl-5 text text-xl font-bold text-timberwolf pointer"
     >
@@ -62,3 +43,5 @@
     <span class="p-15">Voltar</span>
   </div>
 </div>
+
+<!-- TODO Colocar edicao de icones do li que condizer com a rota atual -->

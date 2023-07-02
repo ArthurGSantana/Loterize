@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
 import { map } from "rxjs";
 
-import { ICardConfig } from "src/app/core/models/CardOption.interface";
+import { ICardConfig } from "src/app/core/models/CardConfig.interface";
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 import { CardConfig } from "src/app/core/utils/data";
 

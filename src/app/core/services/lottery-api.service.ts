@@ -16,20 +16,20 @@ export class LotteryApiService {
 
   constructor(private _http: HttpClient) {}
 
-  getAllGames(game: string): Observable<string[]> {
-    return this._http.get<string[]>(this._apiUrls[game]);
+  getAllContests(contest: string): Observable<string[]> {
+    return this._http.get<string[]>(this._apiUrls[contest]);
   }
 
-  getLatestGame(game: string): Observable<ILotteryContest> {
-    return this._http.get<ILotteryContest>(`${this._apiUrls[game]}/latest`);
+  getLatestContest(contest: string): Observable<ILotteryContest> {
+    return this._http.get<ILotteryContest>(`${this._apiUrls[contest]}/latest`);
   }
 
-  getGameByNumber(
-    game: string,
+  getContestByNumber(
+    contest: string,
     contestNumber: number
   ): Observable<ILotteryContest> {
     return this._http.get<ILotteryContest>(
-      `${this._apiUrls[game]}/${contestNumber}`
+      `${this._apiUrls[contest]}/${contestNumber}`
     );
   }
 }

@@ -1,2 +1,7 @@
 <loto-sub-header (onChange)="handleSidebar()"></loto-sub-header>
-<loto-sidebar [controlSidebar]="controlSidebar" (onBack)="backToHomePage()"></loto-sidebar>
+<loto-sidebar
+  [sidebarOptions]="sidebarOptionsContest"
+  [controlSidebar]="controlSidebar"
+  (onChange)="routeToContest($event)"
+  (onBack)="backToHomePage()"
+></loto-sidebar>

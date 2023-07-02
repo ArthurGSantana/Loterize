@@ -9,6 +9,7 @@ import {
 } from "@angular/animations";
 
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
+import { ISidebarOptions } from "src/app/core/models/SidebarOptions.interface";
 
 @Component({
   standalone: true,
@@ -36,7 +37,9 @@ import { SvgIconComponent } from "../svg-icon/svg-icon.component";
   ]
 })
 export class SidebarComponent {
+  @Input({ required: true }) sidebarOptions!: ISidebarOptions[];
   @Input() controlSidebar: "open" | "closed" = "open";
 
+  @Output() onChange = new EventEmitter<number>();
   @Output() onBack = new EventEmitter();
 }
