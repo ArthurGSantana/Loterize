@@ -13,6 +13,7 @@ import { SidebarOptionsContest } from "src/app/core/utils/data";
 export class ContestComponent implements OnInit {
   controlSidebar: "open" | "closed" = "open";
   sidebarOptionsContest = SidebarOptionsContest;
+  contestType!: string;
 
   contestsToRoute: { [key: string]: string } = {
     [ContestsToRoute.Mega]: "contest/mega-sena",
@@ -23,9 +24,9 @@ export class ContestComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.pipe(take(1)).subscribe({
+    this.activatedRoute.params.pipe().subscribe({
       next: (params) => {
-        console.log(params["contestType"]);
+        this.contestType = params["contestType"];
       }
     });
   }

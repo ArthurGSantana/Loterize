@@ -1,4 +1,7 @@
-<loto-sub-header (onChange)="handleSidebar()"></loto-sub-header>
+<loto-sub-header
+  [title]="contestType"
+  (onChange)="handleSidebar()"
+></loto-sub-header>
 <loto-sidebar
   [sidebarOptions]="sidebarOptionsContest"
   [controlSidebar]="controlSidebar"

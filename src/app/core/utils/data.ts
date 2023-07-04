@@ -12,7 +12,7 @@ export const AllowedContests: string[] = ["megasena", "quina", "lotofacil"];
 export const SidebarOptionsContest: ISidebarOptions[] = [
   {
     id: ContestsToRoute.Mega,
-    description: "Mega-Sena"
+    description: "Mega-sena"
   },
   {
     id: ContestsToRoute.Quina,
