@@ -54,39 +54,39 @@
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .py-#{$i} {
     padding-top: #{$i}px;
     padding-bottom: #{$i}px;
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .px-#{$i} {
     padding-left: #{$i}px;
     padding-right: #{$i}px;
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .pt-#{$i} {
     padding-top: #{$i}px;
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .pl-#{$i} {
     padding-left: #{$i}px;
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .pr-#{$i} {
     padding-right: #{$i}px;
   }
 }
 
-@for $i from 1 through 100 {
+@for $i from 1 through 200 {
   .pb-#{$i} {
     padding-bottom: #{$i}px;
   }

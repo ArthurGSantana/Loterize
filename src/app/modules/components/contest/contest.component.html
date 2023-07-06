@@ -2,9 +2,12 @@
   [title]="contestType"
   (onChange)="handleSidebar()"
 ></loto-sub-header>
+
 <loto-sidebar
   [sidebarOptions]="sidebarOptionsContest"
   [controlSidebar]="controlSidebar"
   (onChange)="routeToContest($event)"
   (onBack)="backToHomePage()"
 ></loto-sidebar>
+
+<loto-contest-play></loto-contest-play>
