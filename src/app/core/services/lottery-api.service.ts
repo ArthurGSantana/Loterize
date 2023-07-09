@@ -21,7 +21,9 @@ export class LotteryApiService {
   }
 
   getLatestContest(contest: string): Observable<ILotteryContest> {
-    return this._http.get<ILotteryContest>(`${this._apiUrls[contest]}/latest`);
+    return this._http.get<ILotteryContest>(
+      `${this._apiUrls[contest.replace(/[^a-zA-Z]/g, "")]}/latest`
+    );
   }
 
   getContestByNumber(

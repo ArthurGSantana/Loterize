@@ -54,27 +54,27 @@
   }
 }
 
-@for $i from 1 through 200 {
+@for $i from 1 through 250 {
   .py-#{$i} {
     padding-top: #{$i}px;
     padding-bottom: #{$i}px;
   }
 }
 
-@for $i from 1 through 200 {
+@for $i from 1 through 250 {
   .px-#{$i} {
     padding-left: #{$i}px;
     padding-right: #{$i}px;
   }
 }
 
-@for $i from 1 through 200 {
+@for $i from 1 through 250 {
   .pt-#{$i} {
     padding-top: #{$i}px;
   }
 }
 
-@for $i from 1 through 200 {
+@for $i from 1 through 250 {
   .pl-#{$i} {
     padding-left: #{$i}px;
   }
