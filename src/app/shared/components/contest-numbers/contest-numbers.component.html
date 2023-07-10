@@ -1,15 +1,21 @@
 <div class="py-35">
   <div class="flex flex-wrap row-gap-5 col-gap-5">
     <ng-container *ngFor="let item of numbers">
-      <button class="btn-number">
+      <button
+        [ngClass]="{
+          'btn-number': !sortSelectedNumbers().includes(item),
+          'btn-number-selected': sortSelectedNumbers().includes(item)
+        }"
+        (click)="handleSelectedNumbers(item)"
+      >
         <span class="text-lg font-bold">{{ item }}</span>
       </button>
     </ng-container>
   </div>
   <div class="pt-50 flex col-gap-20">
     <div class="box-numbers w-500">
-      <ng-container>
-        <span></span>
+      <ng-container *ngFor="let item of sortSelectedNumbers()">
+        <span>{{ item }}</span>
       </ng-container>
     </div>
     <div class="flex col-gap-20">
