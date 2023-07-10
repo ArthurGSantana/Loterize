@@ -1,10 +1,24 @@
-<div>
-  <div>
+<div class="py-35">
+  <div class="flex flex-wrap row-gap-5 col-gap-5">
     <ng-container *ngFor="let item of numbers">
       <button class="btn-number">
         <span class="text-lg font-bold">{{ item }}</span>
       </button>
     </ng-container>
   </div>
-  <div></div>
+  <div class="pt-50 flex col-gap-20">
+    <div class="box-numbers w-500">
+      <ng-container>
+        <span></span>
+      </ng-container>
+    </div>
+    <div class="flex col-gap-20">
+      <button class="btn h-36 w-140 bg-items text-white">Complete o jogo</button
+      ><button
+        class="btn-border h-36 w-140 border-green-200 text-green-300 bg-primary"
+      >
+        Limpar volante
+      </button>
+    </div>
+  </div>
 </div>

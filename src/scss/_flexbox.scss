@@ -8,6 +8,14 @@ $margins: top, bottom, left, right;
   display: flex;
 }
 
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.flex-nowrap {
+  flex-wrap: nowrap;
+}
+
 @each $direction in $directions {
   .direction-#{$direction} {
     flex-direction: $direction;
