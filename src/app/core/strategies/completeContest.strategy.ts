@@ -2,14 +2,17 @@ import { ICompleteContestStrategy } from "../models/CompleteContestStrategy.inte
 
 export class CompleteContest implements ICompleteContestStrategy {
   completeContest(items: string[], size: number, maxNumber: number): string[] {
-    const existingitems = new Set(items.map(String));
-    const newArray = [...existingitems];
+    const existingItems = new Set(items.map(String));
+    const newArray: string[] = [...existingItems];
 
     while (newArray.length < size) {
-      const newNumber = Math.round(Math.random() * maxNumber);
-      if (!existingitems.has(String(newNumber))) {
-        newArray.push(String(newNumber));
-        existingitems.add(String(newNumber));
+      let newNumber: string | number =
+        Math.floor(Math.random() * maxNumber) + 1;
+      newNumber = newNumber < 10 ? `0${newNumber}` : String(newNumber);
+
+      if (!existingItems.has(newNumber)) {
+        newArray.push(newNumber);
+        existingItems.add(newNumber);
       }
     }
 
