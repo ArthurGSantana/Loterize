@@ -7,6 +7,9 @@ import {
   computed,
   signal
 } from "@angular/core";
+import { ICompleteContestStrategy } from "src/app/core/models/CompleteContestStrategy.interface";
+
+import { StrategyService } from "src/app/core/services/strategy.service";
 
 @Component({
   standalone: true,
@@ -31,6 +34,8 @@ export class ContestNumbersComponent {
     })
   );
 
+  constructor(private strategyService: StrategyService) {}
+
   handleSelectedNumbers(item: string): void {
     let size: number = this.selectedNumbers().length;
 
@@ -46,5 +51,13 @@ export class ContestNumbersComponent {
         this.selectedNumbers.update((value) => [...value, item]);
       }
     }
+  }
+
+  completeContest(): void {
+    const strategy: ICompleteContestStrategy =
+      this.strategyService.getCompleteContestStrategy();
+
+    let newContest = strategy.completeContest(this.selectedNumbers(), 6, 60);
+    this.selectedNumbers.update((value) => [...newContest]);
   }
 }
