@@ -4,7 +4,7 @@
       <button
         [ngClass]="{
           'btn-number': !sortSelectedNumbers().includes(item),
-          'btn-number-selected': sortSelectedNumbers().includes(item)
+          'btn-number-selected fade-in': sortSelectedNumbers().includes(item)
         }"
         (click)="handleSelectedNumbers(item)"
       >
@@ -13,15 +13,16 @@
     </ng-container>
   </div>
   <div class="pt-50 flex col-gap-20">
-    <div class="box-numbers w-500">
+    <div class="flex align-flex-end col-gap-8 box-numbers w-500">
       <ng-container *ngFor="let item of sortSelectedNumbers()">
-        <span>{{ item }}</span>
+        <span class="text-xl font-bold">{{ item }}</span>
       </ng-container>
     </div>
     <div class="flex col-gap-20">
       <button class="btn h-36 w-140 bg-items text-white">Complete o jogo</button
       ><button
         class="btn-border h-36 w-140 border-green-200 text-green-300 bg-primary"
+        (click)="selectedNumbers.set([])"
       >
         Limpar volante
       </button>
