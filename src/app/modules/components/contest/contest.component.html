@@ -1,5 +1,5 @@
 <loto-sub-header
-  [title]="contestType"
+  [title]="contest.nome"
   (onChange)="handleSidebar()"
 ></loto-sub-header>
 
@@ -10,4 +10,4 @@
   (onBack)="backToHomePage()"
 ></loto-sidebar>
 
-<loto-contest-play></loto-contest-play>
+<loto-contest-play [contest]="contest"></loto-contest-play>

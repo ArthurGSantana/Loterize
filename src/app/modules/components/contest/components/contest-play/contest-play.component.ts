@@ -1,6 +1,4 @@
-import { Component, OnInit } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
-import { map } from "rxjs";
+import { Component, Input, OnInit } from "@angular/core";
 
 import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 
@@ -10,15 +8,11 @@ import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
   styleUrls: ["./contest-play.component.scss"]
 })
 export class ContestPlayComponent implements OnInit {
-  contest!: ILotteryContest;
-  constructor(private activatedRoute: ActivatedRoute) {}
+  @Input() contest!: ILotteryContest;
+
+  constructor() {}
 
   ngOnInit(): void {
-    this.activatedRoute.data.pipe(map(({ contest }) => contest)).subscribe({
-      next: (response: ILotteryContest) => {
-        this.contest = response;
-        console.log(this.contest)
-      }
-    });
+
   }
 }

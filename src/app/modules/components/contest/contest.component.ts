@@ -1,8 +1,11 @@
 import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from "@angular/router";
-import { take } from "rxjs";
+import { map } from "rxjs";
 
-import { ContestsToRoute } from "src/app/core/models/LotteryContest.interface";
+import {
+  ContestsToRoute,
+  ILotteryContest
+} from "src/app/core/models/LotteryContest.interface";
 import { SidebarOptionsContest } from "src/app/core/utils/data";
 
 @Component({
@@ -13,7 +16,7 @@ import { SidebarOptionsContest } from "src/app/core/utils/data";
 export class ContestComponent implements OnInit {
   controlSidebar: "open" | "closed" = "open";
   sidebarOptionsContest = SidebarOptionsContest;
-  contestType!: string;
+  contest!: ILotteryContest;
 
   contestsToRoute: { [key: string]: string } = {
     [ContestsToRoute.Mega]: "contest/mega-sena",
@@ -24,9 +27,10 @@ export class ContestComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.pipe().subscribe({
-      next: (params) => {
-        this.contestType = params["contestType"];
+    this.activatedRoute.data.pipe(map(({ contest }) => contest)).subscribe({
+      next: (response: ILotteryContest) => {
+        this.contest = response;
+        console.log(this.contest);
       }
     });
   }
