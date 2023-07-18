@@ -1,32 +1,43 @@
 <div class="py-35">
-  <div class="flex align-center col-gap-10 mb-30">
-    <button
-      title="Diminuir"
-      class="btn-border h-22 w-22 border-green-200 text-green-300 bg-primary flex jusitfy-center align-center"
-      (click)="decrementMaxNumber()"
-    >
-      <loto-svg-icon
-        src="../../../../assets/svg/minus.svg"
-        width="15px"
-        height="15px"
-        color="green"
-      ></loto-svg-icon>
-    </button>
-    <div class="flex align-flex-end justify-center box-numbers w-40">
-      <span class="text-lg font-bold">{{ maxNumbersSelected }}</span>
+  <div class="flex align-center justify-space-between mb-30">
+    <div class="flex align-center col-gap-10">
+      <button
+        title="Diminuir"
+        class="btn-border h-22 w-22 border-green-200 text-green-300 bg-primary flex jusitfy-center align-center"
+        (click)="decrementMaxNumber()"
+      >
+        <loto-svg-icon
+          src="../../../../assets/svg/minus.svg"
+          width="15px"
+          height="15px"
+          color="green"
+        ></loto-svg-icon>
+      </button>
+      <div class="flex align-flex-end justify-center box-numbers w-40">
+        <span class="text-lg font-bold">{{ maxNumbersSelected }}</span>
+      </div>
+      <button
+        title="Aumentar"
+        class="btn h-22 w-22 bg-items text-white flex jusitfy-center align-center"
+        (click)="incrementMaxNumber()"
+      >
+        <loto-svg-icon
+          src="../../../../assets/svg/plus.svg"
+          width="15px"
+          height="15px"
+          color="timberwolf"
+        ></loto-svg-icon>
+      </button>
+      <span class="text-sm font-bold">Quantidade de números da aposta!</span>
     </div>
-    <button
-      title="Aumentar"
-      class="btn h-22 w-22 bg-items text-white flex jusitfy-center align-center"
-      (click)="incrementMaxNumber()"
-    >
-      <loto-svg-icon
-        src="../../../../assets/svg/plus.svg"
-        width="15px"
-        height="15px"
-        color="timberwolf"
-      ></loto-svg-icon>
-    </button>
+    <div>
+      <button
+        [disabled]="selectedNumbers().length !== maxNumbersSelected"
+        class="btn-border h-36 w-140 bg-secondary text-green-300 border-1 border-solid border-green-300"
+      >
+        Colocar na lista
+      </button>
+    </div>
   </div>
   <div class="flex flex-wrap row-gap-5 col-gap-5">
     <ng-container *ngFor="let item of numbers">
@@ -41,8 +52,8 @@
       </button>
     </ng-container>
   </div>
-  <div class="pt-50 flex col-gap-20">
-    <div class="flex align-flex-end col-gap-8 box-numbers w-500">
+  <div class="pt-50 flex align-flex-end col-gap-20">
+    <div class="flex align-flex-end flex-wrap col-gap-8 box-numbers w-500">
       <ng-container *ngFor="let item of sortSelectedNumbers()">
         <span class="text-xl font-bold">{{ item }}</span>
       </ng-container>

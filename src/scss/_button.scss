@@ -1,5 +1,10 @@
 @import "./colors";
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
 .btn {
   border: none;
   border-radius: 5px;
