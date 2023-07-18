@@ -10,10 +10,11 @@ import {
 import { ICompleteContestStrategy } from "src/app/core/models/CompleteContestStrategy.interface";
 
 import { StrategyService } from "src/app/core/services/strategy.service";
+import { SvgIconComponent } from "../svg-icon/svg-icon.component";
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SvgIconComponent],
   selector: "loto-contest-numbers",
   templateUrl: "./contest-numbers.component.html",
   styleUrls: ["./contest-numbers.component.scss"]
@@ -57,7 +58,21 @@ export class ContestNumbersComponent {
     const strategy: ICompleteContestStrategy =
       this.strategyService.getCompleteContestStrategy();
 
-    let newContest = strategy.completeContest(this.selectedNumbers(), 6, 60);
+    let newContest = strategy.completeContest(
+      this.selectedNumbers(),
+      this.maxNumbersSelected,
+      60
+    );
     this.selectedNumbers.update((value) => [...newContest]);
+  }
+
+  incrementMaxNumber(): void {
+    this.maxNumbersSelected++;
+  }
+
+  decrementMaxNumber(): void {
+    if (this.maxNumbersSelected > 1) {
+      this.maxNumbersSelected--;
+    }
   }
 }

@@ -1,4 +1,33 @@
 <div class="py-35">
+  <div class="flex align-center col-gap-10 mb-30">
+    <button
+      title="Diminuir"
+      class="btn-border h-22 w-22 border-green-200 text-green-300 bg-primary flex jusitfy-center align-center"
+      (click)="decrementMaxNumber()"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/minus.svg"
+        width="15px"
+        height="15px"
+        color="green"
+      ></loto-svg-icon>
+    </button>
+    <div class="flex align-flex-end justify-center box-numbers w-40">
+      <span class="text-lg font-bold">{{ maxNumbersSelected }}</span>
+    </div>
+    <button
+      title="Aumentar"
+      class="btn h-22 w-22 bg-items text-white flex jusitfy-center align-center"
+      (click)="incrementMaxNumber()"
+    >
+      <loto-svg-icon
+        src="../../../../assets/svg/plus.svg"
+        width="15px"
+        height="15px"
+        color="timberwolf"
+      ></loto-svg-icon>
+    </button>
+  </div>
   <div class="flex flex-wrap row-gap-5 col-gap-5">
     <ng-container *ngFor="let item of numbers">
       <button
@@ -19,7 +48,11 @@
       </ng-container>
     </div>
     <div class="flex col-gap-20">
-      <button class="btn h-36 w-140 bg-items text-white" (click)="completeContest()">Complete o jogo</button
+      <button
+        class="btn h-36 w-140 bg-items text-white"
+        (click)="completeContest()"
+      >
+        Complete o jogo</button
       ><button
         class="btn-border h-36 w-140 border-green-200 text-green-300 bg-primary"
         (click)="selectedNumbers.set([])"
