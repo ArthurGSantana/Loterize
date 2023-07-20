@@ -17,6 +17,15 @@ export interface ILotteryContest {
   dataProxConcurso: string;
 }
 
+export type ContestType = "megasena" | "quina" | "lotofacil";
+
+export type ContestBody = {
+  minNumber: number;
+  maxNumber: number;
+  sizeTotal: number;
+};
+export type ContestDataType = Record<ContestType, ContestBody>;
+
 export enum ContestsToRoute {
   Mega = 0,
   Quina,
