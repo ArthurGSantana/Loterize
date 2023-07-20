@@ -1,5 +1,5 @@
 export interface ILotteryContest {
-  loteria: string;
+  loteria: ContestType;
   nome: string;
   concurso: number;
   data: string;

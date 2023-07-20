@@ -3,9 +3,11 @@
     <div>
       <h1 class="text-3xl font-bold text-green-300">Faça sua aposta</h1>
       <span class="text-sm"
-        >Escolha de 6 a 15 números dos 60 disponíveis. Ganhe com 6, 5 ou 4
-        acertos <br />São realizados dois sorteios semanais para você apostar
-        e torcer para ficar milionário.</span
+        >Escolha de {{ contestDataActive.minNumber }} a
+        {{ contestDataActive.maxNumber }} números dos
+        {{ contestDataActive.sizeTotal }} disponíveis. <br />São realizados dois
+        sorteios semanais para você apostar e torcer para ficar
+        milionário.</span
       >
     </div>
     <div class="flex direction-column">

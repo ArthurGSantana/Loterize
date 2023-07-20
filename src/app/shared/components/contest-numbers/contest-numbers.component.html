@@ -14,7 +14,7 @@
         ></loto-svg-icon>
       </button>
       <div class="flex align-flex-end justify-center box-numbers w-40">
-        <span class="text-lg font-bold">{{ maxNumbersSelected }}</span>
+        <span class="text-lg font-bold">{{ amountNumber }}</span>
       </div>
       <button
         title="Aumentar"
@@ -32,7 +32,7 @@
     </div>
     <div>
       <button
-        [disabled]="selectedNumbers().length !== maxNumbersSelected"
+        [disabled]="selectedNumbers().length !== amountNumber"
         class="btn-border h-36 w-140 bg-secondary text-green-300 border-1 border-solid border-green-300"
       >
         Colocar na lista

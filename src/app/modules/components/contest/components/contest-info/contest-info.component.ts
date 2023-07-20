@@ -1,6 +1,9 @@
 import { Component, Input } from "@angular/core";
 
-import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
+import {
+  ContestBody,
+  ILotteryContest
+} from "src/app/core/models/LotteryContest.interface";
 
 @Component({
   selector: "loto-contest-info",
@@ -9,4 +12,5 @@ import { ILotteryContest } from "src/app/core/models/LotteryContest.interface";
 })
 export class ContestInfoComponent {
   @Input({ required: true }) contest!: ILotteryContest;
+  @Input({ required: true }) contestDataActive!: ContestBody;
 }

@@ -30,7 +30,6 @@ export class ContestComponent implements OnInit {
     this.activatedRoute.data.pipe(map(({ contest }) => contest)).subscribe({
       next: (response: ILotteryContest) => {
         this.contest = response;
-        console.log(this.contest);
       }
     });
   }

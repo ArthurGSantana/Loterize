@@ -1,6 +1,11 @@
 <section class="pl-230 p-50">
-  <loto-contest-info [contest]="contest"></loto-contest-info>
+  <loto-contest-info
+    [contest]="contest"
+    [contestDataActive]="contestDataActive"
+  ></loto-contest-info>
   <div class="vw-75">
-    <loto-contest-numbers></loto-contest-numbers>
+    <loto-contest-numbers
+      [contestDataActive]="contestDataActive"
+    ></loto-contest-numbers>
   </div>
 </section>

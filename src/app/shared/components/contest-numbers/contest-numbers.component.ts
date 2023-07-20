@@ -2,15 +2,18 @@ import { CommonModule } from "@angular/common";
 import {
   Component,
   Input,
+  OnChanges,
   Signal,
+  SimpleChanges,
   WritableSignal,
   computed,
   signal
 } from "@angular/core";
-import { ICompleteContestStrategy } from "src/app/core/models/CompleteContestStrategy.interface";
 
+import { ICompleteContestStrategy } from "src/app/core/models/CompleteContestStrategy.interface";
 import { StrategyService } from "src/app/core/services/strategy.service";
 import { SvgIconComponent } from "../svg-icon/svg-icon.component";
+import { ContestBody } from "src/app/core/models/LotteryContest.interface";
 
 @Component({
   standalone: true,
@@ -19,14 +22,12 @@ import { SvgIconComponent } from "../svg-icon/svg-icon.component";
   templateUrl: "./contest-numbers.component.html",
   styleUrls: ["./contest-numbers.component.scss"]
 })
-export class ContestNumbersComponent {
-  @Input() sizeNumbers: number = 60;
-  @Input() maxNumbersSelected: number = 6;
+export class ContestNumbersComponent implements OnChanges {
+  @Input({ required: true }) contestDataActive!: ContestBody;
 
-  numbers: string[] = Array.from({ length: this.sizeNumbers }, (_, index) => {
-    const number = index + 1;
-    return number < 10 ? `0${number}` : `${number}`;
-  });
+  amountNumber!: number;
+
+  numbers: string[] = [];
 
   selectedNumbers: WritableSignal<string[]> = signal([]);
   sortSelectedNumbers: Signal<string[]> = computed(() =>
@@ -36,6 +37,18 @@ export class ContestNumbersComponent {
   );
 
   constructor(private strategyService: StrategyService) {}
+
+  ngOnChanges(change: SimpleChanges): void {
+    this.amountNumber = this.contestDataActive.minNumber;
+    this.selectedNumbers.set([]);
+    this.numbers = Array.from(
+      { length: this.contestDataActive.sizeTotal },
+      (_, index) => {
+        const number = index + 1;
+        return number < 10 ? `0${number}` : `${number}`;
+      }
+    );
+  }
 
   handleSelectedNumbers(item: string): void {
     let size: number = this.selectedNumbers().length;
@@ -48,7 +61,10 @@ export class ContestNumbersComponent {
         return [...value];
       });
     } else {
-      if (size < this.maxNumbersSelected) {
+      if (
+        size >= this.contestDataActive.minNumber &&
+        size <= this.contestDataActive.maxNumber
+      ) {
         this.selectedNumbers.update((value) => [...value, item]);
       }
     }
@@ -60,19 +76,21 @@ export class ContestNumbersComponent {
 
     let newContest = strategy.completeContest(
       this.selectedNumbers(),
-      this.maxNumbersSelected,
-      60
+      this.amountNumber,
+      this.contestDataActive.sizeTotal
     );
     this.selectedNumbers.update((value) => [...newContest]);
   }
 
   incrementMaxNumber(): void {
-    this.maxNumbersSelected++;
+    if (this.amountNumber < this.contestDataActive.maxNumber) {
+      this.amountNumber++;
+    }
   }
 
   decrementMaxNumber(): void {
-    if (this.maxNumbersSelected > 1) {
-      this.maxNumbersSelected--;
+    if (this.amountNumber > this.contestDataActive.minNumber) {
+      this.amountNumber--;
     }
   }
 }
