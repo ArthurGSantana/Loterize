@@ -61,10 +61,7 @@ export class ContestNumbersComponent implements OnChanges {
         return [...value];
       });
     } else {
-      if (
-        size >= this.contestDataActive.minNumber &&
-        size <= this.contestDataActive.maxNumber
-      ) {
+      if (size < this.amountNumber) {
         this.selectedNumbers.update((value) => [...value, item]);
       }
     }
