@@ -37,3 +37,9 @@
     bottom: #{$i}px;
   }
 }
+
+@for $i from 0 through 100 {
+  .z-index-#{$i} {
+    z-index: #{$i};
+  }
+}
